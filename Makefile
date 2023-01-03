@@ -23,6 +23,8 @@ ${OBJ}: config.h config.mk arg.h util.h
 config.h:
 	@echo creating $@ from config.def.h
 	@cp config.def.h $@
+	@sed -i 's/static const char \*user  = "nobody";/static const char \*user  = "'${USER}'";/' config.h
+	@sed -i 's/static const char \*group = "nogroup";/static const char *group = "users";/' config.h
 
 slock: ${OBJ}
 	@echo CC -o $@
