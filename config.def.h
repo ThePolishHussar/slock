@@ -17,14 +17,14 @@ static const int failonclear = 1;
 /* should [command] be run only once? */
 static const int runonce = 0;
 /* length of time (seconds) until [command] is executed */
-static const int timeoffset = 30;
+static int timeoffset = 30;
 /* command to be run after [timeoffset] seconds has passed */
 static const char *command = "/usr/bin/xset dpms force off";
 
 /* time in seconds to cancel lock with mouse movement */
-static const int timetocancel = 4;
+static int timetocancel = 5;
 
-static const int logosize = 75;
+static int logosize = 75;
 static const int logow = 12; /* Grid width and height for right center alignment*/
 static const int logoh = 6;
 
@@ -44,6 +44,7 @@ static XRectangle rectangles[9] = {
 #define BLUR
 /*Set blur radius*/
 static int blurRadius=5;
+
 /*Enable Pixelation*/
 //#define PIXELATION
 /*Set pixelation radius*/
@@ -58,4 +59,7 @@ ResourcePref resources[] = {
 		{ "failcolor",	STRING,		&colorname[FAILED] },
 		{ "capscolor",	STRING,		&colorname[CAPS] },
 		{ "blurradius", INTEGER,	&blurRadius },
+		{ "canceltime",	INTEGER,	&timetocancel },
+		{ "logosize",	INTEGER,	&logosize },
+		{ "timeout",	INTEGER,	&timeoffset },
 };
