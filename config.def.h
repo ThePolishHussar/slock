@@ -3,11 +3,11 @@ static const char *user  = "nobody";
 static const char *group = "nogroup";
 
 static const char *colorname[NUMCOLS] = {
-    [BACKGROUND] = "white",
-	[INIT] =  "2d2d2d",     /* after initialization */
-	[INPUT] =  "#005577",   /* during input */
-	[FAILED] = "#CC3333",   /* wrong password */
-	[CAPS] = "yellow",         /* CapsLock on */
+	[BACKGROUND] =	"white",
+	[INIT] =	"#928374",
+	[INPUT] =	"458588",
+	[FAILED] =	"#cc241d",
+	[CAPS] =	"#d79921",
 };
 
 /* treat a cleared input like a wrong password (color) */
@@ -24,7 +24,7 @@ static const char *command = "/usr/bin/xset dpms force off";
 /* time in seconds to cancel lock with mouse movement */
 static int timetocancel = 5;
 
-static int logosize = 75;
+static int logosize = 30;
 static const int logow = 12; /* Grid width and height for right center alignment*/
 static const int logoh = 6;
 
